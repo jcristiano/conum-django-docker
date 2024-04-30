@@ -12,6 +12,8 @@ RUN wget http://curl.haxx.se/ca/cacert.pem
 RUN mv cacert.pem ca-bundle.crt
 RUN mv ca-bundle.crt /etc/pki/tls/certs
 
+
+
 RUN apt-get update && \
     apt-get install -y ca-certificates && \
     apt-get clean && \
@@ -21,8 +23,9 @@ RUN apt-get update && \
 COPY . /app/
 
 # Instale as dependências do projeto
-RUN pip install --upgrade --trusted-host pypi.python.org pip
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
+#RUN pip install --upgrade --trusted-host pypi.python.org pip
+#RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Exponha a porta em que o Django será executado
 EXPOSE 8000
