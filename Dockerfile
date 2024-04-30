@@ -4,20 +4,20 @@ FROM python:3.12
 #diretorio de trabalho
 WORKDIR /app
 
-RUN mkdir /etc/pki
-RUN mkdir /etc/pki/tls
-RUN mkdir /etc/pki/tls/certs
-RUN apt-get install -y wget
-RUN wget http://curl.haxx.se/ca/cacert.pem
-RUN mv cacert.pem ca-bundle.crt
-RUN mv ca-bundle.crt /etc/pki/tls/certs
+#RUN mkdir /etc/pki
+#RUN mkdir /etc/pki/tls
+#RUN mkdir /etc/pki/tls/certs
+#RUN apt-get install -y wget
+#RUN wget http://curl.haxx.se/ca/cacert.pem
+#RUN mv cacert.pem ca-bundle.crt
+#RUN mv ca-bundle.crt /etc/pki/tls/certs
 
 
 
-RUN apt-get update && \
-    apt-get install -y ca-certificates && \
-    apt-get clean && \
-    update-ca-certificates --fresh
+#RUN apt-get update && \
+#    apt-get install -y ca-certificates && \
+#    apt-get clean && \
+#    update-ca-certificates --fresh
 
 # Copie o código-fonte da aplicação para o contêiner
 COPY . /app/
