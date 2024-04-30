@@ -9,7 +9,7 @@ COPY . /app/
 
 # Instale as dependências do projeto
 RUN pip3 install --upgrade pip3  && \
-        pip install -r requirements.txt
+        pip3 install -r requirements.txt
 
 # Exponha a porta em que o Django será executado
 EXPOSE 8000
