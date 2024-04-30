@@ -8,6 +8,7 @@ WORKDIR /app
 COPY . /app/
 
 # Instale as dependências do projeto
+RUN pip3 install urllib3==1.23
 RUN pip3 install --upgrade pip3  && \
         pip3 install -r requirements.txt
 
