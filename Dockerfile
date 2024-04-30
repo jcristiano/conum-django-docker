@@ -1,8 +1,13 @@
 # Use a imagem base Python
-FROM python:3-slim
+FROM python:3.12
 
 #diretorio de trabalho
 WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y ca-certificates && \
+    apt-get clean && \
+    update-ca-certificates --fresh
 
 # Copie o código-fonte da aplicação para o contêiner
 COPY . /app/
