@@ -1,5 +1,5 @@
 # Use a imagem base Python
-FROM alpine:3.5
+FROM python:3-slim
 
 #diretorio de trabalho
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app/
 
 # Instale as dependências do projeto
-RUN pip3 install --upgrade --trusted-host pypi.python.org pip3
+RUN pip install --upgrade --trusted-host pypi.python.org pip
 RUN pip3 install urllib3==1.23
 RUN pip3 install -r requirements.txt
 
