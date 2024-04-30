@@ -14,7 +14,6 @@ COPY . /app/
 
 # Instale as dependências do projeto
 RUN pip install --upgrade --trusted-host pypi.python.org pip
-RUN pip install --trusted-host pypi.python.org urllib3==1.23
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Exponha a porta em que o Django será executado
