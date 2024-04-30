@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . /app/
 
 # Instale as dependências do projeto
-RUN pip install --upgrade pip && \
-        pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --upgrade pip3  && \
+        pip install -r requirements.txt
 
 # Exponha a porta em que o Django será executado
 EXPOSE 8000
