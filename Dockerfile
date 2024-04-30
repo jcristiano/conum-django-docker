@@ -14,10 +14,10 @@ WORKDIR /app
 
 
 
-#RUN apt-get update && \
-#    apt-get install -y ca-certificates && \
-#    apt-get clean && \
-#    update-ca-certificates --fresh
+RUN apt-get update && \
+    apt-get install -y ca-certificates && \
+    apt-get clean && \
+    update-ca-certificates --fresh
 
 # Copie o código-fonte da aplicação para o contêiner
 COPY . /app/
